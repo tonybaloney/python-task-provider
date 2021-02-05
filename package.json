@@ -6,9 +6,12 @@
 	"engines": {
 		"vscode": "^1.52.0"
 	},
+	"extensionDependencies": ["vscode.python"],
 	"categories": [
 		"Other"
 	],
+	"keywords": ["python", "task", "setuptools"],
+	"icon": "icon.png",
 	"activationEvents": [
 		"onCommand:workbench.action.tasks.runTask"
 	],
