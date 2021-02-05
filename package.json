@@ -2,7 +2,7 @@
 	"name": "python-task-provider",
 	"displayName": "Python task provider",
 	"description": "Automatically provide tasks for setuptools and django to the Run Task/tasks.json system.",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"engines": {
 		"vscode": "^1.52.0"
 	},
@@ -13,6 +13,7 @@
 		"Other"
 	],
 	"keywords": ["python", "task", "setuptools", "django"],
+	"license": "MIT",
 	"icon": "icon.png",
 	"activationEvents": [
 		"onCommand:workbench.action.tasks.runTask"
