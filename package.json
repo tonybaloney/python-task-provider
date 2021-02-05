@@ -1,16 +1,18 @@
 {
 	"name": "python-task-provider",
 	"displayName": "Python task provider",
-	"description": "Provide tasks for common Python code snippets into the VS Code tasks API",
-	"version": "0.0.1",
+	"description": "Automatically provide tasks for setuptools and django to the Run Task/tasks.json system.",
+	"version": "0.1.0",
 	"engines": {
 		"vscode": "^1.52.0"
 	},
+	"repository": {"type": "github", "url": "https://github.com/tonybaloney/python-task-provider"},
+	"publisher": "tonybaloney",
 	"extensionDependencies": ["vscode.python"],
 	"categories": [
 		"Other"
 	],
-	"keywords": ["python", "task", "setuptools"],
+	"keywords": ["python", "task", "setuptools", "django"],
 	"icon": "icon.png",
 	"activationEvents": [
 		"onCommand:workbench.action.tasks.runTask"
@@ -30,7 +32,23 @@
 					},
 					"file": {
 						"type": "string",
-						"description": "The setup.py file path that provides the command. Can be omitted."
+						"description": "The setup.py file path that provides the command. Can be omitted and root is assumed."
+					}
+				}
+			},
+			{
+				"type": "django",
+				"required": [
+					"task"
+				],
+				"properties": {
+					"task": {
+						"type": "string",
+						"description": "The django command to customize"
+					},
+					"file": {
+						"type": "string",
+						"description": "The manage.py file path that provides the command. Can be omitted and root is assumed."
 					}
 				}
 			}
