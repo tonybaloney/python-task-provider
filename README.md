@@ -41,4 +41,4 @@ The type is either `django` or `setuptools`, and the `task` is the subcommand. Y
 
 If you have the Task Explorer UI extension, it will make these available as UI shortcuts:
 
-![](docs/static/task-explorer-shortcut.png)
+![](doc/static/task-explorer-shortcut.png)
