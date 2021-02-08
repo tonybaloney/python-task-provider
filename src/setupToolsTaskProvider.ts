@@ -29,11 +29,14 @@ export class SetupToolsTaskProvider implements vscode.TaskProvider {
 
 	public resolveTask(_task: vscode.Task): vscode.Task | undefined {
 		const task = _task.definition.task;
-
+        var pythonPath = vscode.workspace.getConfiguration('python').get('pythonPath');
+        if (!pythonPath){
+            pythonPath = 'python';
+        }
 		if (task) {
 			// resolveTask requires that the same definition object be used.
 			const definition: SetupToolsTaskDefinition = <any>_task.definition;
-			return new vscode.Task(definition, _task.scope ?? vscode.TaskScope.Workspace, definition.task, 'setuptools', new vscode.ShellExecution(`python ${definition.task}`));
+			return new vscode.Task(definition, _task.scope ?? vscode.TaskScope.Workspace, definition.task, 'setuptools', new vscode.ShellExecution(`${pythonPath} ${definition.task}`));
 		}
 		return undefined;
 	}

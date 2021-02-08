@@ -34,6 +34,10 @@
 					"file": {
 						"type": "string",
 						"description": "The setup.py file path that provides the command. Can be omitted and root is assumed."
+					},
+					"args": {
+						"type": "array",
+						"description": "Optional list of arguments to the task"
 					}
 				}
 			},
@@ -50,6 +54,10 @@
 					"file": {
 						"type": "string",
 						"description": "The manage.py file path that provides the command. Can be omitted and root is assumed."
+					},
+					"args": {
+						"type": "array",
+						"description": "Optional list of arguments to the task"
 					}
 				}
 			}
