@@ -2,7 +2,7 @@
 	"name": "python-task-provider",
 	"displayName": "Python task provider",
 	"description": "Automatically provide tasks for setuptools and django to the Run Task/tasks.json system.",
-	"version": "0.1.1",
+	"version": "0.2.0",
 	"engines": {
 		"vscode": "^1.52.0"
 	},
@@ -54,6 +54,38 @@
 					"file": {
 						"type": "string",
 						"description": "The manage.py file path that provides the command. Can be omitted and root is assumed."
+					},
+					"args": {
+						"type": "array",
+						"description": "Optional list of arguments to the task"
+					}
+				}
+			},
+			{
+				"type": "flit",
+				"required": [
+					"task"
+				],
+				"properties": {
+					"task": {
+						"type": "string",
+						"description": "The flit command"
+					},
+					"args": {
+						"type": "array",
+						"description": "Optional list of arguments to the task"
+					}
+				}
+			},
+			{
+				"type": "poetry",
+				"required": [
+					"task"
+				],
+				"properties": {
+					"task": {
+						"type": "string",
+						"description": "The poetry command"
 					},
 					"args": {
 						"type": "array",

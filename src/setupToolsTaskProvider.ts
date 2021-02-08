@@ -36,7 +36,9 @@ export class SetupToolsTaskProvider implements vscode.TaskProvider {
 		if (task) {
 			// resolveTask requires that the same definition object be used.
 			const definition: SetupToolsTaskDefinition = <any>_task.definition;
-			return new vscode.Task(definition, _task.scope ?? vscode.TaskScope.Workspace, definition.task, 'setuptools', new vscode.ShellExecution(`${pythonPath} ${definition.task}`));
+			const pythonFile = definition.file ? definition.file : 'setup.py';
+			const args = definition.args ? definition.args.join(' ') : ''; 
+			return new vscode.Task(definition, _task.scope ?? vscode.TaskScope.Workspace, definition.task, 'setuptools', new vscode.ShellExecution(`${pythonPath} ${pythonFile} ${definition.task} ${args}`));
 		}
 		return undefined;
 	}
@@ -79,6 +81,11 @@ interface SetupToolsTaskDefinition extends vscode.TaskDefinition {
 	 * The python file containing the task
 	 */
 	file?: string;
+
+	/**
+	 * Optional arguments to the task
+	 */
+	args?: string[];
 }
 
 const buildNames: string[] = ['bdist', 'bdist_wheel', 'sdist', 'build'];

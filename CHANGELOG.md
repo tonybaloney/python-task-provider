@@ -1,9 +1,17 @@
 # Change Log
 
-All notable changes to the "python-task-provider" extension will be documented in this file.
+## 0.2.0
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+- Additional args support
+- Task resolver support for tasks.json
+- Support for non-root files (setup.py or manage.py)
+- Added flit and poetry discovery via pyproject.toml metadata sections
 
-## [Unreleased]
+## 0.1.0
+
+- Setuptools command support
+- Django command support
+
+## 0.0.1
 
 - Initial release
