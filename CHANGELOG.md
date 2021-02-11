@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.3.0
+
+- Made dynamic discovery of subcommands for setuptools and django optional (and off by default)
+
 ## 0.2.0
 
 - Additional args support

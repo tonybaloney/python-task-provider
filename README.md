@@ -39,6 +39,11 @@ It will then make available the following commands as tasks:
 
 ![](doc/static/flit-task-discovery.png)
 
+## Configuration
+
+- `"pythonTaskProvider.runSetupToolsToDiscoverOptions"` default: `false`, "Run setup.py --help-commands to discover extra commands. Caution, do not enable this for untrusted projects."
+- `"pythonTaskProvider.runDjangoToDiscoverOptions"` default: `false`, "Run manage.py --help to discover extra commands. Caution, do not enable this for untrusted projects."
+
 ## Calling from tasks.json
 
 If you want to save the task and recall it, add it to `tasks.json`:

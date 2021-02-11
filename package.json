@@ -2,7 +2,7 @@
 	"name": "python-task-provider",
 	"displayName": "Python task provider",
 	"description": "Automatically provide tasks for setuptools and django to the Run Task/tasks.json system.",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"engines": {
 		"vscode": "^1.52.0"
 	},
@@ -20,6 +20,21 @@
 	],
 	"main": "./out/extension.js",
 	"contributes": {
+		"configuration": {
+			"title": "PythonTaskProvider",
+			"properties": {
+			  "pythonTaskProvider.runSetupToolsToDiscoverOptions": {
+				"type": "boolean",
+				"default": false,
+				"description": "Run setup.py --help-commands to discover extra commands. Caution, do not enable this for untrusted projects."
+			  },
+			  "pythonTaskProvider.runDjangoToDiscoverOptions": {
+				"type": "boolean",
+				"default": false,
+				"description": "Run manage.py --help to discover extra commands. Caution, do not enable this for untrusted projects."
+			  }
+			}
+		  },
 		"taskDefinitions": [
 			{
 				"type": "setuptools",
